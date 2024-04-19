@@ -28,7 +28,8 @@ def ParseGClientConfig():
   """
   with open(os.path.join(GCLIENT_ROOT, '.gclient')) as dot_gclient:
     config = {}
-    exec(dot_gclient, config)
+    data = dot_gclient.read()
+    exec(data, config)
   return config
 
 
